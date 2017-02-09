@@ -1,9 +1,10 @@
 import React from 'react';
 
 const NewPlaylist = (props) => {
+  console.log(props)
   return (
     <div className="well">
-    <form className="form-horizontal">
+    <form className="form-horizontal" onSubmit={ props.formSubmit }>
       <fieldset>
         <legend>New Playlist</legend>
         <div className="form-group">
