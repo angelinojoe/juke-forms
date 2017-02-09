@@ -12,11 +12,11 @@ export default class Playlist extends Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.postPlaylist = this.postPlaylist.bind(this);
   }
 
+//PASS IN
   handleSubmit(event){
-    this.postPlaylist();
+    this.props.postPlaylist(this.state.inputValue);
     this.setState({
       inputValue: '',
       hasChanged: false
@@ -32,13 +32,8 @@ export default class Playlist extends Component {
     })
   }
 
-  postPlaylist(){
-    return axios.post('/api/playlists', { name: this.state.inputValue })
-    .then(res => res.data)
-    .then(result => {
-      console.log(result) // response json from the server!
-    });
-  }
+
+
 
   render(){
     const empty = this.state.hasChanged && this.state.inputValue.length === 0;
