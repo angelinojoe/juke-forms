@@ -21,9 +21,8 @@ ReactDOM.render(
         <Route path="/artists/:artistId/albums" component={Albums} />
         <Route path="/artists/:artistId/songs" component={Songs} />
       </Route>
-      <Route path="/playlists" component={Playlist} >
-        <Route path=':playlistId' component={SinglePlaylist} />
-       </Route>
+      <Route path="/playlists" component={Playlist} />
+      <Route path="playlists/:playlistId" component={SinglePlaylist} />
       <IndexRedirect to='/albums' />
     </Route>
   </Router>,
